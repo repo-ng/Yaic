@@ -19,7 +19,7 @@ class Has
 	// • === number → ... »
 	public static function number($var)
 	{
-		return (preg_match('/\d/', $var));
+		return preg_match('/\d/', $var) === 1;
 	}
 
 
@@ -29,7 +29,7 @@ class Has
 	// • === letter → ... »
 	public static function letter($var)
 	{
-		return (preg_match('/[a-zA-Z]/', $var));
+		return preg_match('/[a-zA-Z]/', $var) === 1;
 	}
 
 
@@ -61,5 +61,19 @@ class Has
 	{
 		return (preg_match('/(\R){2,}/', $var));
 	}
+
+
+
+
+
+	// • === character → ... »
+	public static function character($var, $ignoreSpace = true)
+	{
+		if ($ignoreSpace) {
+			return preg_match('/[^a-zA-Z0-9\s]/', $var) === 1;
+		}
+		return preg_match('/[^a-zA-Z0-9]/', $var) === 1;
+	}
+
 
 }//> end of Has
