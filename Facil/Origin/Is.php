@@ -95,6 +95,16 @@ class Is
 
 
 
+	// • === alphabet → ... » boolean
+	public static function alphabet($var)
+	{
+		return ctype_alpha($var);
+	}
+
+
+
+
+
 	// • === lowercase → ... » boolean
 	public static function lowercase($var)
 	{
