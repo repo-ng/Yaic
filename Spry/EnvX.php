@@ -30,7 +30,6 @@ class EnvX
 			if (!empty(self::$project)) {
 				self::$project = StringX::toObject(self::$project, ';', '=');
 			}
-
 		}
 	}
 
