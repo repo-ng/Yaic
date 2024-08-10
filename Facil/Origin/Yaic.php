@@ -200,8 +200,8 @@ class Yaic
 
 
 
-	// • === dump → ... »
-	public static function dump($var, string $title = null): void
+	// • === debug → ... »
+	public static function debug($var, string $title = null): void
 	{
 		$output = '<div style="' . self::style('container') . '">';
 
@@ -228,7 +228,7 @@ class Yaic
 	// • === exit → output and exit »
 	public static function exit($var, string $title = self::BRAND): void
 	{
-		self::dump($var, $title);
+		self::debug($var, $title);
 		exit;
 	}
 
@@ -239,7 +239,7 @@ class Yaic
 	// • === print → ... »
 	public static function print($var)
 	{
-		return self::dump([self::ABBR => $var]);
+		return self::debug([self::ABBR => $var]);
 	}
 
 
@@ -333,6 +333,16 @@ class Yaic
 	public static function run($var)
 	{
 		echo '<pre>' . var_export($var, true) . '</pre>' . "\n\r";
+	}
+
+
+
+
+
+	// • === dump → ... »
+	public static function dump($var)
+	{
+		return var_dump($var);
 	}
 
 }//> end of Yaic
